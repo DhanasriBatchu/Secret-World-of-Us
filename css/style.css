@@ -1,0 +1,1012 @@
+
+/* =========================================
+   BASIC RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    font-family: "Poppins", sans-serif;
+
+    color: white;
+
+    background: #030003;
+}
+
+
+/* =========================================
+   BEAUTIFUL RED / BLACK BACKGROUND
+========================================= */
+
+.background {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -10;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255, 0, 70, 0.35),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(180, 0, 45, 0.3),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(255, 0, 50, 0.2),
+            transparent 40%
+        ),
+
+        linear-gradient(
+            135deg,
+            #000000,
+            #160008,
+            #050005,
+            #1c000a,
+            #000000
+        );
+
+    animation: backgroundAnimation 12s ease-in-out infinite alternate;
+}
+
+
+@keyframes backgroundAnimation {
+
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.08);
+    }
+}
+
+
+/* =========================================
+   GLITTER
+========================================= */
+
+#particles {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+.particle {
+
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+        0 0 5px white,
+        0 0 15px #ff174f;
+
+    animation: sparkle linear infinite;
+}
+
+
+@keyframes sparkle {
+
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+
+/* =========================================
+   FLOATING HEARTS
+========================================= */
+
+#hearts {
+
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+.heart {
+
+    position: absolute;
+
+    bottom: -50px;
+
+    color: #ff174f;
+
+    text-shadow:
+        0 0 10px #ff174f,
+        0 0 25px #ff174f;
+
+    animation: floatingHeart linear infinite;
+}
+
+
+@keyframes floatingHeart {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(0.5);
+
+        opacity: 0;
+
+    }
+
+    15% {
+        opacity: 0.8;
+    }
+
+    50% {
+
+        transform:
+            translateY(-50vh)
+            rotate(20deg)
+            scale(1);
+
+    }
+
+    100% {
+
+        transform:
+            translateY(-110vh)
+            rotate(-20deg)
+            scale(1.2);
+
+        opacity: 0;
+
+    }
+}
+
+
+/* =========================================
+   MAIN PAGE
+========================================= */
+
+.secret-door {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    position: relative;
+
+    z-index: 3;
+}
+
+
+/* =========================================
+   TOP LABEL
+========================================= */
+
+.top-label {
+
+    font-family: "Cinzel", serif;
+
+    font-size: 12px;
+
+    letter-spacing: 7px;
+
+    color: #ff6b8a;
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        0 0 10px #ff174f;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.title {
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: clamp(
+        65px,
+        10vw,
+        125px
+    );
+
+    line-height: 0.9;
+
+    font-weight: 400;
+
+    color: white;
+
+    text-shadow:
+
+        0 0 10px rgba(255,255,255,0.5),
+
+        0 0 25px rgba(255,0,70,0.7),
+
+        0 0 60px rgba(255,0,70,0.5);
+}
+
+
+.title span {
+
+    display: block;
+
+    margin-top: 18px;
+
+    color: #ff174f;
+
+    text-shadow:
+
+        0 0 10px #ff174f,
+
+        0 0 30px #ff174f,
+
+        0 0 70px rgba(255,0,70,0.7);
+}
+
+
+/* =========================================
+   QUOTE
+========================================= */
+
+.quote {
+
+    margin-top: 35px;
+
+    font-size: 15px;
+
+    line-height: 2;
+
+    color: #e8b7c2;
+
+    font-weight: 300;
+}
+
+
+.quote span {
+
+    color: #ff8da5;
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: 24px;
+}
+
+
+/* =========================================
+   SECRET CARD
+========================================= */
+
+.secret-card {
+
+    width: min(
+        470px,
+        100%
+    );
+
+    margin-top: 40px;
+
+    padding: 40px 35px;
+
+    border-radius: 30px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,0,60,0.15),
+            rgba(10,0,5,0.88)
+        );
+
+    border:
+
+        1px solid
+        rgba(255,50,90,0.45);
+
+    box-shadow:
+
+        0 0 25px
+        rgba(255,0,60,0.18),
+
+        0 0 70px
+        rgba(255,0,60,0.08),
+
+        inset 0 0 40px
+        rgba(255,0,60,0.06);
+
+    backdrop-filter: blur(18px);
+
+    animation: cardAnimation 5s ease-in-out infinite;
+}
+
+
+@keyframes cardAnimation {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* Card glowing light */
+
+.secret-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 200px;
+    height: 200px;
+
+    top: -100px;
+    right: -100px;
+
+    border-radius: 50%;
+
+    background: #ff174f;
+
+    filter: blur(90px);
+
+    opacity: 0.25;
+}
+
+
+.secret-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    bottom: -100px;
+    left: -100px;
+
+    border-radius: 50%;
+
+    background: #ff174f;
+
+    filter: blur(90px);
+
+    opacity: 0.2;
+}
+
+
+/* =========================================
+   HEART
+========================================= */
+
+.big-heart {
+
+    width: 70px;
+
+    height: 70px;
+
+    margin:
+        0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 30px;
+
+    background:
+
+        radial-gradient(
+            circle,
+            #ff174f,
+            #79001f
+        );
+
+    box-shadow:
+
+        0 0 15px #ff174f,
+
+        0 0 40px rgba(255,23,79,0.7);
+
+    animation: heartbeat 1.4s infinite;
+}
+
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.15);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.1);
+    }
+}
+
+
+/* =========================================
+   CARD TEXT
+========================================= */
+
+.secret-card h2 {
+
+    font-family: "Cinzel", serif;
+
+    font-size: 22px;
+
+    margin-bottom: 12px;
+
+    color: white;
+}
+
+
+.card-text {
+
+    color: #cda5af;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   INPUT
+========================================= */
+
+.name-box {
+
+    position: relative;
+
+    width: 100%;
+}
+
+
+.name-icon {
+
+    position: absolute;
+
+    left: 18px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 22px;
+
+    color: #ff4169;
+
+    z-index: 2;
+}
+
+
+.name-box input {
+
+    width: 100%;
+
+    height: 56px;
+
+    padding:
+        0 20px
+        0 52px;
+
+    border-radius: 16px;
+
+    border:
+
+        1px solid
+        rgba(255,50,90,0.4);
+
+    outline: none;
+
+    background:
+        rgba(0,0,0,0.5);
+
+    color: white;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+
+.name-box input::placeholder {
+    color: #8f6872;
+}
+
+
+.name-box input:focus {
+
+    border-color: #ff174f;
+
+    box-shadow:
+
+        0 0 15px
+        rgba(255,23,79,0.5),
+
+        inset 0 0 15px
+        rgba(255,23,79,0.08);
+}
+
+
+/* =========================================
+   ERROR
+========================================= */
+
+.error-message {
+
+    display: none;
+
+    margin-top: 10px;
+
+    color: #ff7894;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.enter-button {
+
+    width: 100%;
+
+    height: 56px;
+
+    margin-top: 20px;
+
+    border: none;
+
+    border-radius: 16px;
+
+    cursor: pointer;
+
+    color: white;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #850021,
+            #ff174f,
+            #850021
+        );
+
+    background-size: 200% auto;
+
+    box-shadow:
+
+        0 0 15px
+        rgba(255,23,79,0.5),
+
+        0 0 40px
+        rgba(255,23,79,0.2);
+
+    transition: 0.4s;
+}
+
+
+.enter-button:hover {
+
+    transform: translateY(-4px);
+
+    background-position: right center;
+
+    box-shadow:
+
+        0 0 25px
+        rgba(255,23,79,0.8),
+
+        0 0 60px
+        rgba(255,23,79,0.4);
+}
+
+
+.enter-button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================
+   BOTTOM TEXT
+========================================= */
+
+.bottom-text {
+
+    margin-top: 30px;
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: 20px;
+
+    color: #c88998;
+}
+
+
+/* =========================================
+   LOADING SCREEN
+========================================= */
+
+.loading-screen {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 25px;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            #3b0012,
+            #0a0006 50%,
+            #000000
+        );
+}
+
+
+.loading-screen.active {
+    display: flex;
+}
+
+
+.loading-box {
+
+    width: min(
+        450px,
+        100%
+    );
+}
+
+
+.loading-heart {
+
+    font-size: 80px;
+
+    color: #ff174f;
+
+    text-shadow:
+
+        0 0 15px #ff174f,
+
+        0 0 40px #ff174f,
+
+        0 0 80px rgba(255,23,79,0.7);
+
+    animation: heartbeat 1.2s infinite;
+
+    margin-bottom: 20px;
+}
+
+
+.loading-box h2 {
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: 42px;
+
+    font-weight: 400;
+}
+
+
+.loading-box p {
+
+    margin-top: 12px;
+
+    color: #d9aab5;
+
+    font-size: 14px;
+
+    min-height: 25px;
+}
+
+
+/* =========================================
+   PROGRESS
+========================================= */
+
+.progress-bar {
+
+    width: 100%;
+
+    height: 8px;
+
+    margin-top: 30px;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    background:
+        rgba(255,255,255,0.08);
+}
+
+
+.progress {
+
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: 20px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #870025,
+            #ff174f,
+            #ff8da5
+        );
+
+    box-shadow:
+        0 0 15px #ff174f;
+
+    transition:
+        width 0.15s linear;
+}
+
+
+.percentage {
+
+    margin-top: 12px;
+
+    color: #ff6685;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .secret-door {
+
+        padding:
+            30px 18px;
+    }
+
+
+    .top-label {
+
+        font-size: 9px;
+
+        letter-spacing: 4px;
+    }
+
+
+    .title {
+
+        font-size:
+            clamp(
+                55px,
+                17vw,
+                80px
+            );
+    }
+
+
+    .quote {
+
+        font-size: 13px;
+
+        margin-top: 28px;
+    }
+
+
+    .quote span {
+
+        font-size: 21px;
+    }
+
+
+    .secret-card {
+
+        margin-top: 32px;
+
+        padding:
+            32px 20px;
+
+        border-radius: 24px;
+    }
+
+
+    .secret-card h2 {
+
+        font-size: 18px;
+    }
+
+
+    .card-text {
+
+        font-size: 12px;
+    }
+
+
+    .bottom-text {
+
+        font-size: 17px;
+
+        max-width: 300px;
+
+        line-height: 1.5;
+    }
+
+
+    .loading-heart {
+
+        font-size: 65px;
+    }
+
+
+    .loading-box h2 {
+
+        font-size: 36px;
+    }
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+    .title {
+        font-size: 52px;
+    }
+
+
+    .secret-card {
+
+        padding:
+            28px 16px;
+    }
+
+
+    .big-heart {
+
+        width: 58px;
+        height: 58px;
+
+        font-size: 25px;
+    }
+}
+/* =========================================
+   PHOTO SIZE
+========================================= */
+
+.photo-card img {
+    width: 230px;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    border-radius: 18px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .photo-card img {
+        width: 200px;
+        height: 245px;
+    }
+
+}
